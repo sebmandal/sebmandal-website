@@ -1,0 +1,42 @@
+extends ../blocks/master
+block content
+  h2.text-center Developer/staff console
+  hr
+  .row
+    .col-md-10
+      h2 New Article
+      form(action="/developer/article", method="post")
+        .mb-3
+          input(type="text", name="title", placeholder="Title").form-control
+          label Your article title.
+        .mb-3
+          input(type="text", name="subtitle", placeholder="Subtitle").form-control
+          label Your article subtitle.
+        .mb-3
+          input(type="text", name="description", placeholder="Description").form-control
+          label Your article description.
+        .mb-3
+          input(type="text", name="imageUrl", placeholder="Image URL").form-control
+          label Your article image URL.
+        .mb-3
+          input(type="date", name="date", placeholder="Date").form-control
+          label Your article post-date.
+        .mb-3
+          input(type="submit", value="Submit").form-control
+    .col-md-2
+      a(href='/logout') Log out
+  .row
+    for article in articles.slice(-1 * articles.length).reverse()
+      .col-md-4(style='margin-bottom: 2rem;')
+        a.text-decoration-none(href=`/articles/detail/${articles.indexOf(article)}`)
+          .card.shadow
+            .card-img-top
+              img(src=article.imageUrl, style='width: 100%;')
+            .card-body
+              h5.card-title.text-dark #{article.title}
+              h6.card-subtitle.mb-2.text-muted #{article.subtitle}
+              p.card-text.text-dark #{article.description}
+              a(href=`/developer/delete/${articles.indexOf(article)}`)
+                svg(xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16")
+                  path(d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z")
+                  path(fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z")

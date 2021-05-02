@@ -1,0 +1,15 @@
+extends ../blocks/master
+block content
+  h2.text-center Latest articles
+  hr
+  .row
+    for article in articles.slice(-3).reverse()
+      .col-md-4.article
+        a.text-decoration-none(href=`/articles/detail/${articles.indexOf(article)}`)
+          .card.shadow
+            .card-img-top
+              .image-wrapper(style='height: 400px;')
+                img(src=article.imageUrl style='object-fit: cover; max-height: 395px; height: 395px; width: 100%;')
+            .card-body
+              h5.card-title.text-dark #{article.title}
+              h6.card-subtitle.mb-2.text-muted #{article.subtitle}

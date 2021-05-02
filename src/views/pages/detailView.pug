@@ -1,0 +1,12 @@
+extends ../blocks/master
+block content
+  //- h2.text-center #{article.title} - (detailed view)
+  //- hr
+  .row
+    .col-md-4(style='margin-bottom: 1rem;')
+      img(src=article.imageUrl style='width: 100%;')
+    .col-md-8.text-center
+      h4= article.title
+      h5.text-muted #{article.subtitle}
+      p= article.description
+      h6.text-muted Date issued: #{article.date}
