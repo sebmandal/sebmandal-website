@@ -2,9 +2,9 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/website', function (req, res) {
-  return res.redirect('https://github.com/sebmandal/sebmandal-website')
-});
+// ro use the redirects router
+var redirectsRouter = require('./routerRedirects');
+router.use(redirectsRouter);
 
 // to use the index router
 var indexRouter = require('./routerIndex');
