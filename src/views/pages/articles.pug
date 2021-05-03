@@ -1,18 +1,36 @@
 extends ../blocks/master
 block content
-  h2.text-center All articles
+  h2.text-center All Music Videos
   hr
   .row
     for article in articles.slice(-1 * articles.length).reverse()
-      .col-md-4.article
-        a.text-decoration-none(href=`/articles/detail/${articles.indexOf(article)}`)
-          .card.shadow
-            .card-img-top
-              .image-wrapper(style='height: 400px;')
-                img(src=article.imageUrl style='object-fit: cover; max-height: 395px; height: 395px; width: 100%;')
-            .card-body
-              h5.card-title.text-dark #{article.title}
-              h6.card-subtitle.mb-2.text-muted #{article.subtitle}
-              h6.card-subtitle.mb-2.text-muted #{article.date}
-              //- p.card-text.text-dark #{article.description}
-              //- p.card-text.text-dark #{article.date}
+      if article.type == 'music video'
+        .col-md-4.article
+          a.text-decoration-none(href=`/articles/detail/${articles.indexOf(article)}`)
+            .card.shadow
+              .card-img-top
+                .image-wrapper(style='height: 400px;')
+                  img(src=article.imageUrl style='object-fit: cover; max-height: 395px; height: 395px; width: 100%;')
+              .card-body
+                h5.card-title.text-dark #{article.title}
+                h6.card-subtitle.mb-2.text-muted #{article.subtitle}
+                h6.card-subtitle.mb-2.text-muted #{article.date}
+                //- p.card-text.text-dark #{article.description}
+                //- p.card-text.text-dark #{article.date}
+  h2.text-center All Programming Projects
+  hr
+  .row
+    for article in articles.slice(-1 * articles.length).reverse()
+      if article.type == 'programming'
+        .col-md-4.article
+          a.text-decoration-none(href=`/articles/detail/${articles.indexOf(article)}`)
+            .card.shadow
+              .card-img-top
+                .image-wrapper(style='height: 400px;')
+                  img(src=article.imageUrl style='object-fit: cover; max-height: 395px; height: 395px; width: 100%;')
+              .card-body
+                h5.card-title.text-dark #{article.title}
+                h6.card-subtitle.mb-2.text-muted #{article.subtitle}
+                h6.card-subtitle.mb-2.text-muted #{article.date}
+                //- p.card-text.text-dark #{article.description}
+                //- p.card-text.text-dark #{article.date}

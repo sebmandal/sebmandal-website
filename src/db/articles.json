@@ -4,20 +4,23 @@
     "subtitle": "Discord server",
     "description": "I administrate and own a server along with @tycrek on the social platform Discord on the subject of programming and helping young or new developers prosper, offering the help they need and helping them get more experience  in the field. The invite link is: https://discord.gg/6Y93Gwd",
     "imageUrl": "https://cdn.discordapp.com/attachments/754050901064548455/829077655193255976/Logo-near-flat.png",
-    "date": "2020-09-05"
+    "date": "2020-09-05",
+    "type": "programming"
   },
   {
     "title": "This Website",
     "subtitle": "Website",
     "description": "This website is open-sourced, along with a few other website templates on my Github. (https://sebmandal.com/source)",
     "imageUrl": "https://cdn.discordapp.com/attachments/838154346347626507/838360007896465478/Screen_Shot_2021-05-02_at_12.23.14_PM.png",
-    "date": "2021-04-01"
+    "date": "2021-04-01",
+    "type": "programming"
   },
   {
     "title": "Big Mo - Kaldt (Music Video)",
     "subtitle": "Music Video",
     "description": "I directed and edited a music video for a local, upcoming Norwegian artist, Big Mo. Link coming as soon as production is \nfinished, so be rady for a banger!",
     "imageUrl": "https://cdn.discordapp.com/attachments/838154346347626507/838154406872612864/SNAP_20210422-223823_2.jpg",
-    "date": "2021-04-22"
+    "date": "2021-04-22",
+    "type": "music video"
   }
 ]
