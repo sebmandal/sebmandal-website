@@ -22,5 +22,9 @@ router.use(articlesRouter);
 var detailViewRouter = require('./routerDetailView');
 router.use(detailViewRouter);
 
+// to use the private router
+var private = require('./routerPrivate');
+router.use(private);
+
 // to be able to require this from server.js
 module.exports = router;
