@@ -1,109 +1,69 @@
 doctype html
-html(lang="en")
+html
   head
-    meta(charset="UTF-8")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous")
-    link(rel="icon" href="https://cdn.discordapp.com/attachments/838154346347626507/838354080682344499/Apple_Movie_Camera_Emoji.png")
-    title Sebastian Productions®
-    script.
-      function goBack() {
-        window.history.back();
-      }
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    meta(name='description' content='Sebastian Mandal Pricing Guide')
+    meta(name='author' content='Sebastian Productions® Development Team')
+    title Sebastian Mandal
+    // Bootstrap core CSS
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0' crossorigin='anonymous')
+    meta(name='theme-color' content='#7952b3')
+    // Bootstrap JS
+    script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js' integrity='sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p' crossorigin='anonymous')
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js' integrity='sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ' crossorigin='anonymous')
+    // Favicons
+    link(rel='icon' href='https://cdn.discordapp.com/attachments/838154346347626507/838354080682344499/Apple_Movie_Camera_Emoji.png' sizes='160x160')
+    link(rel='canonical' href='https://getbootstrap.com/docs/5.0/examples/cover/')
     style.
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-      @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
-      * {
-        font-family: 'Poppins', Arial, serif;
-      }
-      .nav-item a {
-        cursor: default;
-      }
-      .nav-item a.hover-link:hover {
-        color: #cecece !important;
-      }
-      .nav-item {
-        margin: 0.2rem;
-      }
-      .image-wrapper img {
-        width: auto;
-        max-width: 100%;
-        height: auto;
-      }
-      .article {
-        margin-bottom: 2rem;
-      }
+      html,
       body {
-        overflow-x: hidden;
-      }
-      .main-content {
         height: 100%;
-        min-height: 100vh;
       }
-      .footer {
-        padding-bottom: 1rem;
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
       }
-      .wrapper {
-        width: 100%; height: 100%;
-        z-index: 1;
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items:center;
-        color:#fff;
-      }
-      .box {
-        width: 300px; height: 200px;
-        background-color: #DDFFF7;
-        position: relative;
-        box-shadow: 10px 10px 42px 0 rgba(0,0,0,0.75);
-      }
-      .box:after, .box:before {
-        mix-blend-mode:multiply;
-        filter:none;
-        z-index: -1;
-        content:'';
-        width:calc(100% + (50px * 2));
-        height:calc(100% + (50px * 2));
-        position: absolute;
-        display: block;
-        animation: border 10s ease-in-out infinite;
-        transform:translateX(-50px) translateY(-50px);
-      }
-      @keyframes border {
-        0%, 100% {
-          -webkit-clip-path: polygon(0 0, calc(100% - (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 100%, calc(0% + (33.3333333333px)) calc(100% - (33.3333333333px)));
-                  clip-path: polygon(0 0, calc(100% - (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 100%, calc(0% + (33.3333333333px)) calc(100% - (33.3333333333px)));
-        }
-        50% {
-          -webkit-clip-path: polygon(calc(0% + (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 0, calc(100% - (33.3333333333px)) calc(100% - (33.3333333333px)), 0 100%);
-                  clip-path: polygon(calc(0% + (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 0, calc(100% - (33.3333333333px)) calc(100% - (33.3333333333px)), 0 100%);
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
         }
       }
-
-      .box:after {
-        animation-delay: -5s;
-        background-color: #93e1d8;
-        clip-path: polygon(0 0, calc(100% - (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 100%, calc(0% + (33.3333333333px)) calc(100% - (33.3333333333px)));
-      }
-      .box:before {
-        background-color: #AA4465;
-          clip-path: polygon(calc(0% + (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 0, calc(100% - (33.3333333333px)) calc(100% - (33.3333333333px)), 0 100%);
-      }
-  body(style='overflow-x: hidden; width: 100vw !important;')
-    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous")
-    .bg-dark
-      include ./navbar.pug
-    .bg-dark.text-light
-      .container.main-content
-        br
-        block content
-        //- .wrapper(style='height: 40vh;')
-        //-   .box.bg-dark
-        //-     img(src='https://cdn.discordapp.com/attachments/838154346347626507/838353276470558740/sebastian_productions_logo.png' style='position: absolute; width: 100%; height: 100%;')
-    .footer
-      hr
-      include ./footer.pug
+    // Custom styles for this template
+    link(href='https://fonts.googleapis.com/css?family=Playfair+Display:700,900&display=swap' rel='stylesheet')
+    // Custom styles for this template
+    link(href='https://getbootstrap.com/docs/5.0/examples/cover/cover.css' rel='stylesheet')
+  body.bg-dark.text-white.text-center
+    .cover-container.d-flex.w-100.h-100.p-3.mx-auto.flex-column
+      header.mb-auto
+        div
+          span
+            h3.float-md-start.mb-0 Sebastian Productions&reg;
+          nav.nav.nav-masthead.justify-content-center.float-md-end
+            if url == '/'
+              a.nav-link.active(href='/') Home
+            else
+              a.nav-link(href='/') Home
+            if url == '/history'
+              a.nav-link.active(href='/history') History
+            else
+              a.nav-link(href='/history') History
+            if url == '/services'
+              a.nav-link.active(href='/services') Services
+            else
+              a.nav-link(href='/services') Services
+            if url == '/contact'
+              a.nav-link.active(href='/contact') Contact
+            else
+              a.nav-link(href='/contact') Contact
+      block content
+      footer.mt-auto.text-white-50
+        p
+          | Designed by
+          a.text-white(href='https://instagram.com/sebastian_productions1') @sebmandal
+          | , and 
+          a.text-white(href='https://twitter.com/mdo') @mdo
+          | .

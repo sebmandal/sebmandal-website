@@ -1,15 +1,10 @@
 extends ../blocks/master
 block content
-  h2.text-center Latest Articles
-  hr
-  .row
-    for article in articles.slice(-3).reverse()
-      .col-md-4.article
-        a.text-decoration-none(href=`/articles/detail/${articles.indexOf(article)}`)
-          .bg-white.shadow
-            .card-img-top
-              .image-wrapper(style='height: 400px;')
-                img(src=article.imageUrl style='object-fit: cover; max-height: 395px; height: 395px; width: 100%;')
-            .card-body
-              h5.card-title.text-dark #{article.title}
-              h6.card-subtitle.mb-2.text-muted #{article.subtitle}
+  main.px-3
+    h1 Sebastian Productions&reg;
+    p.lead
+      | Sebastian Productions&reg; is the licenced company, ran by freelancer
+      | Sebastian Mandal for his website/software development clients, and the
+      | occasional music video.
+    p.lead
+      a.btn.btn-lg.btn-secondary.fw-bold.border-white.bg-white(href='/services') See services

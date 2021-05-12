@@ -1,38 +1,35 @@
 // imports
 var express = require('express');
 var router = express.Router();
+var fs = require('fs-extra');
 
-router.get('/experimental', function (req, res) {
-  return res.render('experimental');
+router.get('/', function (req, res) {
+  req.session.url = '/';
+  return res.render('index', req.session);
 });
 
-// ro use the redirects router
-var redirectsRouter = require('./routerRedirects');
-router.use(redirectsRouter);
+router.get('/services', function (req, res) {
+  req.session.url = '/services';
+  return res.render('services', req.session);
+});
 
-// to use the index router
-var indexRouter = require('./routerIndex');
-router.use(indexRouter);
+router.get('/contact', function (req, res) {
+  req.session.url = '/contact';
+  return res.render('contact', req.session);
+});
 
-// to use the developer router
-var devRouter = require('./routerDeveloper');
-router.use(devRouter);
+router.get('/history', function (req, res) {
+  req.session.url = '/history';
+  req.session.projects = fs.readJSONSync('./src/db/articles.json');
+  return res.render('history', req.session);
+});
 
-// to use the articles router
-var articlesRouter = require('./routerArticles');
-router.use(articlesRouter);
-
-// to use the detailView router
-var detailViewRouter = require('./routerDetailView');
-router.use(detailViewRouter);
-
-// to use the search router
-var searchRouter = require('./routerSearch');
-router.use(searchRouter);
-
-// to use the private router
-var private = require('./routerPrivate');
-router.use(private);
+router.get('/detail/:articleID', function (req, res) {
+  var articles = fs.readJSONSync('./src/db/articles.json');
+  req.session.articles = articles;
+  req.session.article = req.session.articles[parseInt(req.params.articleID)];
+  res.render('detailView', req.session);
+});
 
 // to be able to require this from server.js
 module.exports = router;

@@ -1,0 +1,9 @@
+extends ../blocks/master
+block content
+  h1 All Projects 
+  hr
+  ul.text-left.list-group
+  for project in projects
+    li.list-group-item
+      a(href=`/detail/${projects.indexOf(project)}`)
+        h2= project.title
