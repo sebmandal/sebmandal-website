@@ -3,13 +3,16 @@ block content
   //- h2.text-center #{article.title} - (detailed view)
   //- hr
   .row
-    .col-md-12(style=`background-image: URL(${article.imageUrl}); background-size: cover; min-height: 100vh;`)
+    .col-md-12
       .text-center(style='background: rgba(255, 255, 255, 0.75); margin: 1rem; padding: 1rem;')
         .row
+          .col-md-1
           .col-md-10
+            img(src=article.imageUrl style='width: 50%; margin-bottom: 10px;')
             h4.text-dark= article.title
             h5.text-muted #{article.subtitle}
             p.text-dark(style='left: 12.5%; width: 75%; right: 12.5%; position: relative;')= article.description
             h6.text-muted Date issued: #{article.date}
-          .col-md-2(style='margin-bottom: 1rem;')
-            img(src=article.imageUrl style='width: 100%;')
+            br
+            .btn.btn-primary(onclick='goBack()') Go back
+          .col-md-1
