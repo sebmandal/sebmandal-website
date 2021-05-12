@@ -2,6 +2,10 @@
 var express = require('express');
 var router = express.Router();
 
+router.get('/experimental', function (req, res) {
+  return res.render('experimental');
+});
+
 // ro use the redirects router
 var redirectsRouter = require('./routerRedirects');
 router.use(redirectsRouter);
@@ -21,6 +25,10 @@ router.use(articlesRouter);
 // to use the detailView router
 var detailViewRouter = require('./routerDetailView');
 router.use(detailViewRouter);
+
+// to use the search router
+var searchRouter = require('./routerSearch');
+router.use(searchRouter);
 
 // to use the private router
 var private = require('./routerPrivate');
