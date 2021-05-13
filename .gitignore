@@ -102,9 +102,3 @@ dist
 
 # TernJS port file
 .tern-port
-
-# Developer Portal and private elements
-src/routes/routerDeveloper.js
-src/views/pages/private.pug
-src/routes/routerPrivate.js
-src/db/private.json
