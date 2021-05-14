@@ -1,10 +1,8 @@
 extends ../blocks/master
 block content
-  br
-  br
-  br
-  h1 All Projects
-  hr
-  for project in projects.slice().reverse()
-    a.text-decoration-none(href=`/detail/${projects.indexOf(project)}` style="text-shadow: none !important;")
-      h4.text-light= project.title
+  main.px-3
+    h1 All Projects
+    hr
+    for project in projects.slice().reverse()
+      a.text-decoration-none(href=`/detail/${projects.indexOf(project)}` style="text-shadow: none !important;")
+        h4.text-light= project.title
